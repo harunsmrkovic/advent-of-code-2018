@@ -1,6 +1,6 @@
 const input = require("./input");
 
-// helper that safely fils coordinate
+// helper that safely fils coordinate, and pushes overlapping IDs into an array
 const fillCoordinate = (matrix, overlappingIds, x, y, id) => {
   if (!matrix[x]) matrix[x] = [];
   if (!matrix[x][y]) matrix[x][y] = [];
@@ -12,7 +12,7 @@ const fillCoordinate = (matrix, overlappingIds, x, y, id) => {
   matrix[x][y] = id;
 };
 
-// mutates a passed in matrix, applying appropriate surface
+// mutates a passed in matrix, applying appropriate surface, plus forms overlapping IDs array
 const fillMatrix = (matrix, overlappingIds) => ({ x, y, w, h, id }) => {
   for (let i = x; i < x + w; i++) {
     for (let j = y; j < y + h; j++) {
@@ -21,7 +21,7 @@ const fillMatrix = (matrix, overlappingIds) => ({ x, y, w, h, id }) => {
   }
 };
 
-// map all overlaps onto one matrix
+// fill the matrix, and then check for overlapping Ids
 const getIntactFabric = input => {
   const matrix = [];
   const overlappingIds = [];
