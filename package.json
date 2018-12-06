@@ -1,0 +1,11 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:harunsmrkovic/advent-of-code-2018.git",
+  "author": "Harun Smrkovic <hakazvaka@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.26.1"
+  }
+}
